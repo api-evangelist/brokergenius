@@ -1,0 +1,20 @@
+generated: '2026-10-06'
+method: probed
+source: https://brokergenius.ai/privacy-policy/
+signals:
+  data_retention:
+    evidence:
+      - source: https://brokergenius.ai/privacy-policy/
+        http_status: 200
+        fetched: /tmp/privacy.html
+        quote: "We will only retain your personal data for as long as necessary to fulfill the purposes we collected it for, including compliance with legal, accounting, and reporting requirements."
+        section: "7. Data Retention"
+        note: Retains data only as needed for purpose and legal compliance.
+  subprocessors:
+    evidence:
+      - source: https://brokergenius.ai/privacy-policy/
+        http_status: 200
+        fetched: /tmp/privacy.html
+        quote: "We may share your information with: Service Providers – Third-party service providers that perform essential services on our behalf (e.g., payment processing, hosting, customer service)."
+        section: "5. Disclosure of Your Information"
+        note: Discloses use of third‑party service providers as subprocessors.

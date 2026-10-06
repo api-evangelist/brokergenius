@@ -1,23 +1,119 @@
 aid: brokergenius
+
 name: Brokergenius
-description: 'Brokergenius is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+image: https://brokergenius.ai/wp-content/uploads/2025/07/Blue-Orange-Green-Lined-Illustration-Social-Media-Policy-Presentation-2.jpg
+
+description: Broker Genius provides AI‑powered customs brokerage automation for brokers, freight forwarders, and trade teams. The platform reads
+  invoices, classifies line items, assigns HS codes, and generates ASYCUDA‑compatible declarations, reducing manual entry time by up to 80%. Built
+  in Anguilla, it offers a web portal, REST API, and webhooks to integrate with existing TMS and ERP systems, with a free trial and no credit‑card
+  required.
+
 url: https://raw.githubusercontent.com/api-evangelist/brokergenius/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-06 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-06'
+
 modified: '2026-10-06'
+
 tags:
-- Company
-apis: []
+- Customs
+- AI
+- Automation
+- Brokerage
+- Logistics
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Plans
+  url: plans/brokergenius-plans-pricing.yml
+- type: Spectral
+  url: rules/brokergenius-rules.yml
+- type: JSONLD
+  url: json-ld/brokergenius-context.jsonld
+- type: Vocabulary
+  url: vocabulary/brokergenius-vocabulary.yml
+- type: DataModel
+  url: data-model/brokergenius-data-model.yml
+- type: Conformance
+  url: conformance/brokergenius-conformance.yml
+- type: WellKnown
+  url: well-known/brokergenius-well-known.yml
+- type: Hosts
+  url: hosts/brokergenius-hosts.yml
+- type: Login
+  url: https://brokergenius.ai/login
+- type: DomainSecurity
+  url: security/brokergenius-domain-security.yml
 - type: Website
-  url: https://equityzen.com/company/brokergenius
+  url: https://brokergenius.ai
+- type: Documentation
+  url: https://brokergenius.ai/developer
+- type: APIReference
+  url: https://brokergenius.ai/developer
+- type: GettingStarted
+  url: https://brokergenius.ai/join
+- type: Support
+  url: https://brokergenius.ai/support
+- type: Blog
+  url: https://brokergenius.ai/blog
+- type: Pricing
+  url: https://brokergenius.ai/pricing
+- type: TermsOfService
+  url: https://brokergenius.ai/terms-of-service
+- type: PrivacyPolicy
+  url: https://brokergenius.ai/privacy-policy
+
+apis:
+- name: Broker Genius API
+  description: REST API for Broker Genius providing customs brokerage automation
+  humanURL: https://brokergenius.ai/developer
+  baseURL: null
+  aid: brokergenius:broker-genius-api
+- aid: brokergenius:brokergenius-api
+  name: Brokergenius API
+  description: 'Brokergenius API as documented publicly: 2 operations. Contract generated from the documentation by API Evangelist (2026-10-06);
+
+    not the provider''s own document.'
+  humanURL: https://brokergenius.ai/developer
+  baseURL: https://api.brokergenius.ai
+  properties:
+  - type: OpenAPI
+    url: openapi/_ae-authored/brokergenius-openapi-generated.yml
+    x-provenance: generated
+  - type: JSONSchema
+    url: json-schema/brokergenius-post-api-apiid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/brokergenius-post-api-apiid-request-schema.json
+
+x-coverage:
+  state: unreadable
+  reason: no-machine-readable-spec
+  method: derived
+  generated: '2026-10-06'
+  generator: derive-coverage.py (pre-flight evidence)
+  detail: the company publishes developer documentation but serves no machine-readable contract from it
+  evidence:
+  - url: https://brokergenius.ai
+    status: 200
+  - url: https://equityzen.com/company/brokergenius
+    status: 403
+x-enrichment:
+  date: '2026-10-06'
+  status: enriched
+  artifacts_added: 17
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local

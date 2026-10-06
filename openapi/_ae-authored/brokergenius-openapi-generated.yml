@@ -1,0 +1,105 @@
+openapi: 3.1.0
+info:
+  title: Brokergenius API
+  version: '2026-10-06'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-06: 2 operation(s) read from 5 public documentation page(s) (each operation
+    names its page in x-source). This is not the provider''s published contract; Brokergenius has published no machine-readable contract that
+    the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 3
+    documentation: -1
+    pages-with-code: 4
+    pages-read: 5
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-06'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://brokergenius.ai/developer
+  - https://brokergenius.ai/api-customs-data
+  - https://brokergenius.ai/developer_text
+  - https://brokergenius.ai/developer_images
+  - https://brokergenius.ai/developer_invoices
+servers:
+- url: https://api.brokergenius.ai
+paths:
+  /api/{apiid}:
+    post:
+      operationId: post_api_apiid
+      tags:
+      - Api
+      summary: POST /api/batchstatus
+      x-source: https://brokergenius.ai/developer_text
+      parameters:
+      - name: apiid
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostApiApiidRequest'
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostApiApiidResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -X POST https://api.brokergenius.ai/api/batchstatus  -H \"Authorization: Bearer YOUR_API_KEY\"  -H \"Content-Type: application/json\"\
+          \  -d '{\n \"batchid\": \"b2e51fae2c5011e06ff23e5a41be3da8\"\n}' \n Example Response \n {\n \"batchid\": \"b2e51fae2c5011e06ff23e5a41be3da8\"\
+          ,\n \"total\": 5,\n \"count\": 3,\n \"status\": \"processing\"\n} \n This response indicates that 3 out of 5 items in the batch have\
+          \ been processed, and"
+        collapsed_from: 7 example path(s) differing only at apiId
+  /v1/classify:
+    post:
+      operationId: post_v1_classify
+      tags:
+      - Classify
+      summary: POST /v1/classify
+      x-source: https://brokergenius.ai/api-customs-data
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl https://api.brokergenius.ai/v1/classify  -H \"Authorization: Bearer $BG_KEY\"  -d '{ \"description\": \"Cotton canvas tote,\n\
+          \ unprinted\", \"country\": \"AI\" }'\n{\n \"hts_code\": \"4202.92.0807\",\n \"duty_rate\": \"17.6%\",\n \"confidence\": 0.94,\n \"\
+          pga_flags\": [],\n \"formats\": [\"JSON\", \"XML\", \"XLSX\"]\n} \n Unlock smarter customs workflows with these core advantages. \n\
+          \ The Broker Genius Customs Data API empowers cust"
+components:
+  schemas:
+    PostApiApiidRequest:
+      type: object
+      properties:
+        batchid:
+          type: string
+    PostApiApiidResponse:
+      type: object
+      properties:
+        batchid:
+          type: string
+        total:
+          type: integer
+        count:
+          type: integer
+        status:
+          type: string
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
+security:
+- bearer: []
+tags:
+- name: Api
+- name: Classify

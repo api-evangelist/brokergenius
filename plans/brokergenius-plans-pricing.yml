@@ -1,0 +1,31 @@
+generated: '2026-10-06'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://brokergenius.ai/pricing/
+sources:
+- https://brokergenius.ai/pricing/
+name: Brokergenius pricing
+audience: business-product
+pricing_basis: per-seat
+plans:
+- name: Solo
+  price_text: $50 per month
+  price: 50
+  description: Ideal for individual brokers
+- name: Basic
+  price_text: $150 per month
+  price: 150
+  description: Ideal for small businesses or startups
+- name: Standard
+  price_text: $275 per month
+  price: 275
+  description: Perfect for growing businesses
+- name: Premium
+  price_text: $500 per month
+  price: 500
+  description: Best for established businesses
+- name: Enterprise
+  price_text: $660 per month
+  price: 660
+  description: Ideal for high-volume businesses
+docs: https://brokergenius.ai/pricing/

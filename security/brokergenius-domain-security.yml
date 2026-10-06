@@ -1,0 +1,16 @@
+generated: '2026-10-06'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: brokergenius.ai
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Dec 30 00:59:52 2026 GMT
+  hsts: false
+domains:
+- domain: brokergenius.ai
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: quarantine

@@ -1,0 +1,6 @@
+{
+  "resource": "https://brokergenius.ai/api/gpt/mcp.php",
+  "authorization_servers": ["https://brokergenius.ai"],
+  "scopes_supported": ["classify"],
+  "bearer_methods_supported": ["header"]
+}

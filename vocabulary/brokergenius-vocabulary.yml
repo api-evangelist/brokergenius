@@ -1,0 +1,20 @@
+generated: '2026-10-06'
+method: derived
+generator: derive-vocabulary.py
+source: openapi/_ae-authored/brokergenius-openapi-generated.yml
+vocabulary:
+  name: Brokergenius Domain Vocabulary
+  description: 'Terms declared by Brokergenius''s own API contract: its resource groups, objects and enumerations, with the contract''s definitions.
+    Derived, not authored.'
+  version: '2026-10-06'
+  terms:
+  - term: PostApiApiidRequest
+    definition: 'Object declared by the contract with fields: batchid.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/brokergenius-openapi-generated.yml#/components/schemas/PostApiApiidRequest
+  - term: PostApiApiidResponse
+    definition: 'Object declared by the contract with fields: batchid, total, count, status.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/brokergenius-openapi-generated.yml#/components/schemas/PostApiApiidResponse
