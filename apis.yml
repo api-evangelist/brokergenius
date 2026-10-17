@@ -83,22 +83,34 @@ apis:
   humanURL: https://brokergenius.ai/developer
   baseURL: null
   aid: brokergenius:broker-genius-api
-- aid: brokergenius:brokergenius-api
-  name: Brokergenius API
-  description: 'Brokergenius API as documented publicly: 2 operations. Contract generated from the documentation by API Evangelist (2026-10-06);
-
-    not the provider''s own document.'
+- aid: brokergenius:brokergenius-brokergenius-api-api
+  name: Brokergenius Brokergenius API
+  description: The Brokergenius API API from Brokergenius — 1 operation(s) for brokergenius api.
   humanURL: https://brokergenius.ai/developer
   baseURL: https://api.brokergenius.ai
+  tags:
+  - Brokergenius API
   properties:
   - type: OpenAPI
-    url: openapi/_ae-authored/brokergenius-openapi-generated.yml
-    x-provenance: generated
+    url: openapi/brokergenius-brokergenius-api-api-openapi.yml
   - type: JSONSchema
     url: json-schema/brokergenius-post-api-apiid-response-schema.json
   - type: JSONSchema
     url: json-schema/brokergenius-post-api-apiid-request-schema.json
-
+- aid: brokergenius:brokergenius-classify-api
+  name: Brokergenius Classify API
+  description: The Classify API from Brokergenius — 1 operation(s) for classify.
+  humanURL: https://brokergenius.ai/developer
+  baseURL: https://api.brokergenius.ai
+  tags:
+  - Classify
+  properties:
+  - type: OpenAPI
+    url: openapi/brokergenius-classify-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/brokergenius-post-api-apiid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/brokergenius-post-api-apiid-request-schema.json
 x-coverage:
   state: unreadable
   reason: no-machine-readable-spec

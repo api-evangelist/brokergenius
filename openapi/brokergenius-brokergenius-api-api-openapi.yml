@@ -1,0 +1,82 @@
+openapi: 3.2.0
+info:
+  title: Brokergenius API
+  version: '2026-10-06'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-06: 2 operation(s) read from 5 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; Brokergenius has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 3
+    documentation: -1
+    pages-with-code: 4
+    pages-read: 5
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-06'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://brokergenius.ai/developer
+  - https://brokergenius.ai/api-customs-data
+  - https://brokergenius.ai/developer_text
+  - https://brokergenius.ai/developer_images
+  - https://brokergenius.ai/developer_invoices
+servers:
+- url: https://api.brokergenius.ai
+security:
+- bearer: []
+tags:
+- name: Brokergenius API
+paths:
+  /api/{apiid}:
+    post:
+      operationId: post_api_apiid
+      tags:
+      - Brokergenius API
+      summary: POST /api/batchstatus
+      x-source: https://brokergenius.ai/developer_text
+      parameters:
+      - name: apiid
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostApiApiidRequest'
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostApiApiidResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -X POST https://api.brokergenius.ai/api/batchstatus  -H \"Authorization: Bearer YOUR_API_KEY\"  -H \"Content-Type: application/json\"  -d '{\n \"batchid\": \"b2e51fae2c5011e06ff23e5a41be3da8\"\n}' \n Example Response \n {\n \"batchid\": \"b2e51fae2c5011e06ff23e5a41be3da8\",\n \"total\": 5,\n \"count\": 3,\n \"status\": \"processing\"\n} \n This response indicates that 3 out of 5 items in the batch have been processed, and"
+        collapsed_from: 7 example path(s) differing only at apiId
+components:
+  schemas:
+    PostApiApiidResponse:
+      type: object
+      properties:
+        batchid:
+          type: string
+        total:
+          type: integer
+        count:
+          type: integer
+        status:
+          type: string
+    PostApiApiidRequest:
+      type: object
+      properties:
+        batchid:
+          type: string
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
